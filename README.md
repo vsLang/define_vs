@@ -51,13 +51,13 @@ case@varX(
 ### 循环
 ```
 loop(value index)@ListY(
-    (print@con(index)) # index means loop cursor index on the list
-    (print@con(value)) # value is assigned the list item value now
+    print@con(index) # index means loop cursor index on the list
+    print@con(value) # value is assigned the list item value now
     )
 
 
 loop(value)@ListY(
-    (print@con(value))
+    print@con(value)
     )
 ```
 
