@@ -31,8 +31,8 @@ created God the heaven
 ### 顺序
 ```
 let@x(15)
-let@y(real! 0)
-let@z({real! 123}) # 将列表{...}赋值给z, 在这里不会对其求值
+let@y(real(0))
+let@z({real(123)}) # 将列表{...}赋值给z, 在这里不会对表达式求值
 
 print@con("Hello, world!")
 print@con(z[1] z[0])
@@ -43,8 +43,8 @@ print@file1("Hello, world!")
 ### 分支
 ```
 case@varX(
-      ('NG' (print con 'not good'))
-      ('DNBE' (print con 'do NOT be evil! listen well, Google!'))
+      ('NG' print@con('not good'))
+      ('DNBE' print@con('do NOT be evil! listen well, Google!'))
       )
 ```
 
@@ -71,7 +71,7 @@ wrap(funZ ObjZ)@(p1 p2 p3)( # ...
      )
 
 # call:
-f1@O1(1 2 3)
+funZ@O1(1 2 3)
 
 
 wrap(mac)@(q1 q2 q3)(
