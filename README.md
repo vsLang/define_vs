@@ -35,7 +35,7 @@ let@y(real(0))
 let@z({real(123)}) # 将列表{...}赋值给z, 在这里不会对表达式求值
 
 print@con("Hello, world!")
-print@con(z[1] z[0])
+print@con(z[1] z[0]) # (123) (real)
 print@file1("Hello, world!")
 =@x(9) # assign value 9 to x
 ```
@@ -62,7 +62,7 @@ loop(value)@ListY(
 ```
 
 ### 函数
-- no really funcs here. Just marcos
+- no really funcs in vs. Just marcos
 
 ```
 wrap(funZ ObjZ)@(p1 p2 p3)( # ...
