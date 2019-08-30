@@ -31,6 +31,7 @@ created God the heaven
 let@x(15)
 let@y(real(0))
 let@z(`real(1 2 3)) # 将列表`real(1 2 3)`(类似于其他语言的`{{real} {1 2 3}}`列表)赋值给z, 在这里不会对表达式求值
+let@(a b c)(1 '3' 5.0)
 
 print@con("Hello, world!")
 print@con(z[1] z[0]) # (1 2 3) (real)
@@ -40,10 +41,10 @@ print@file1("Hello, world!")
 
 ### 分支
 ```
-case(aaa)@varX(
-      (==(aaa "DNBE") print@con("Do NOT Be Evil!"))
-      (==(aaa "TING") print@con("That is not good!"))
-      (==(aaa "LWG" ) print@con("Listen Well Google!"))
+case@varX(
+      (==(varX      "DNBE") print@con("Do NOT Be Evil!"))
+      (==(varX[-4:] "TING") print@con("That is not good!"))
+      (==(varX[:3]  "LWG" ) print@con("Listen Well Google!"))
       )
 ```
 
