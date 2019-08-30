@@ -27,16 +27,23 @@ created God the heaven
 ## 语法结构
 ### 顺序
 ```
-var@x(15) # x是整型
+var(int)@x # x是整型变量, 初始值为0
+var@x(15) # x是整型变量, 初始值为15
 var@x1(15 50) # x1 is a list! 当后面的括号只有一个值的时候, 返回该值; 有多个值的时候, 返回列表
 var@y(real(0))
 var@z(`real(1 2 3)) # 将列表`real(1 2 3)`(类似于其他语言的`{{real} {1 2 3}}`列表)赋值给z, 在这里不会对表达式求值
 var@(a b c)(1 '3' 5.0)
+var@(x)(scan@con("Please input a number:"))
+
+val@y(5) # x是整型常量, 初始值为5
 
 print@con("Hello, world!")
 print@con(z[1] z[0]) # (1 2 3) (real)
 print@file1("Hello, world!")
 =@x(9) # assign value 9 to x
+
+arith("3 + {a} * (5 - {c})") # a c are vars
+print@con(arith(" {a} && (5 > {c}) ")) # easy reading eqs.
 ```
 
 ### 分支
@@ -82,4 +89,11 @@ mac(12.3 23 45.6)
 =@fn(wrap@(a b) ())
 
 fn(2 3)
+```
+
+## 库
+```
+import("matrix" "plotlib")
+import( ("plotlib" plt) ) # import plotlib as plt
+import( ("plotlib/decoration/axis" axis) ) # import a sub lib
 ```
