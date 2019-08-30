@@ -44,7 +44,7 @@ print@file1("Hello, world!")
 case@varX(
       (==(varX      "DNBE") print@con("Do NOT Be Evil!"))
       (==(varX[-4:] "TING") print@con("That is not good!"))
-      (==(varX[:3]  "LWG" ) print@con("Listen Well Google!"))
+      (_                    print@con("Listen Well Google!")) # 所有其他情况
       )
 ```
 
