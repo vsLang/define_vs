@@ -1,0 +1,47 @@
+#+begin_src vs
+var(int)@v1 # 这是注释
+var(string)@v2("文本")
+var@v9(23) # 类型自动推断
+
+=@(x y)(y x) # 交换x和y的值
+_ # 匿名变量
+#+end_src
+
+#+begin_src vs
+val(real)@Pi(3.14159265) # 常量
+val@zero(0.0)
+val@(size shape)(32 5) # size=32, shape=5
+val(real)@(u v)(0.5 3) # 不用real的话 v=3, 用了之后 v=3.0
+val(bool)@(x y)(True False) # 预定义常量: True False
+#+end_src
+
+#+begin_src vs
+# 数值运算 + - * / % ++ --
+# 比较运算 < > <= >= == !=
+# 逻辑运算 && || !
+#   位运算 x>>a右移, x<<a左移, x^y异或, x&y与, x|y或, ^x取反
+# 赋值运算 =
+#+end_src
+
+#+begin_src vs
+case (
+    (in(ch ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')) =@cl("Int"))
+    (||(&&(>=(ch 'a') <=(ch 'z')) &&(>=(ch 'A') <=(ch 'Z')))   =@cl("ABC"))
+    (_ =@cl("Other Char"))
+)
+#+end_src
+
+loop, break, continue
+
+#+begin_src vs
+wrap@(a b) ( # 匿名函数
+    # pla pla pla ...
+)
+
+=@f(wrap@(x)(...)) # 将匿名函数赋值给变量f
+f(3) # 执行函数
+#+end_src
+
+# 闭包
+
+# 错误处理??

@@ -51,8 +51,8 @@ my_2nd( (1 2.0 "3" 4 5) )  # 2.0
 - 清单 8. 计算两个整数中的最大值
 ```
 wrap(my_max)@(x y) (
-    case@(x>y) (
-      (True x)
+    case (
+      (>(x y) x)
       (_    y) # all other cases
     )
 )
@@ -64,8 +64,8 @@ my_max(6 1) # 6
 - 清单 9. 使用递归计算列表的总和
 ```
 wrap(total)@(x) (
-    case@(is_null(x))(
-      (True 0)
+    case(
+      (is_null(x) 0)
       (_    +(x[0] total(x[1:])))
     )
 )
@@ -76,9 +76,4 @@ wrap(total)@(x) (
 - 清单 10. Lambda 表达式
 ```
 # maybe later
-```
-
-- 清单 11. 宏
-```
-# 看来还是应该区分宏和函数?
 ```

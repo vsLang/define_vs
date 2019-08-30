@@ -6,8 +6,7 @@ created God the heaven
 # `vs`
 试着做个玩具(计算机用)语言, 它应该 `极为简单`, `极为自然`, `极易处理`.
 
-在参考了人类自然语言和现有计算机语言的特点之后,
-这里决定采用 `谓[主]宾结构`(如古希伯来语), 基本句式只有两种:
+在参考了人类自然语言和现有计算机语言的特点之后, 这里决定采用 `谓[主][宾]结构`(如古希伯来语), 基本句式只有两种:
 - `verb(o1 o2 ...)`
 - `verb@sub(o1 o2 ...)`
 
@@ -18,7 +17,7 @@ created God the heaven
 - 我也全然不知道为什么会这样...
 
 ## 内置数据类型
-- 布尔型(bool, 8bit), 整型(int, 64bit), 实型(real, 64bit), 复型(complex, 128bit), 字符串(string), 句柄(handle)
+- 布尔型(bool, 8bit), 字符型(char, UTF8), 整型(int, 64bit), 实型(real, 64bit), 字符串(string), 句柄(handle)
 - 列表(list, 用`()`定义), 自定义数据类型
 
 ## 内置操作类型
@@ -28,10 +27,11 @@ created God the heaven
 ## 语法结构
 ### 顺序
 ```
-let@x(15)
-let@y(real(0))
-let@z(`real(1 2 3)) # 将列表`real(1 2 3)`(类似于其他语言的`{{real} {1 2 3}}`列表)赋值给z, 在这里不会对表达式求值
-let@(a b c)(1 '3' 5.0)
+var@x(15) # x是整型
+var@x1(15 50) # x1 is a list! 当后面的括号只有一个值的时候, 返回该值; 有多个值的时候, 返回列表
+var@y(real(0))
+var@z(`real(1 2 3)) # 将列表`real(1 2 3)`(类似于其他语言的`{{real} {1 2 3}}`列表)赋值给z, 在这里不会对表达式求值
+var@(a b c)(1 '3' 5.0)
 
 print@con("Hello, world!")
 print@con(z[1] z[0]) # (1 2 3) (real)
@@ -41,7 +41,7 @@ print@file1("Hello, world!")
 
 ### 分支
 ```
-case@varX(
+case(
       (==(varX      "DNBE") print@con("Do NOT Be Evil!"))
       (==(varX[-4:] "TING") print@con("That is not good!"))
       (_                    print@con("Listen Well Google!")) # 所有其他情况
@@ -77,4 +77,9 @@ wrap(mac)@(q1 q2 q3)(
      )
 
 mac(12.3 23 45.6)
+
+
+=@fn(wrap@(a b) ())
+
+fn(2 3)
 ```
