@@ -7,7 +7,7 @@ created God the heaven
 试着做个玩具(计算机用)语言, 它应该 `极为简单`, `极为自然`, `极易处理`.
 
 在参考了人类自然语言和现有计算机语言的特点之后,
-这里决定采用 `谓主宾结构`(如古希伯来语), 基本句式只有两种:
+这里决定采用 `谓[主]宾结构`(如古希伯来语), 基本句式只有两种:
 - `verb(o1 o2 ...)`
 - `verb@sub(o1 o2 ...)`
 
@@ -62,16 +62,13 @@ loop(value)@ListY(
 ```
 
 ### 函数
-- There is no really functions in `vs`. Just marcos
-
 ```
 wrap(funZ ObjZ)@(p1 p2 p3)( # ...
      # fields in ObjZ can be accessed and updated by funZ
      # no side effect
      )
 
-# call:
-funZ@O1(1 2 3)
+funZ@O1(1 2 3) # o1 can be updated
 
 
 wrap(mac)@(q1 q2 q3)(
@@ -79,6 +76,5 @@ wrap(mac)@(q1 q2 q3)(
      # no side effect
      )
 
-# call:
 mac(12.3 23 45.6)
 ```
