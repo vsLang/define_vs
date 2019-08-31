@@ -44,6 +44,8 @@ print@file1("Hello, world!")
 
 arith("3 + {a} * (5 - {c})") # a c are vars
 print@con(arith(" {a} && (5 > {c}) ")) # easy reading eqs.
+eval( `... ) # eval vs expr (yet another list)
+exec( "..." ) # exec vs source codes in string
 ```
 
 ### 分支
@@ -93,7 +95,6 @@ fn(2 3)
 
 ## 库
 ```
-import("matrix" "plotlib")
-import( ("plotlib" plt) ) # import plotlib as plt
-import( ("plotlib/decoration/axis" axis) ) # import a sub lib
+import("matrix" "../plotlib")
+import( ("~/vs/lib/plotlib" plt) ) # import plotlib as plt; no sub lib
 ```
