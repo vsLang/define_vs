@@ -10,14 +10,10 @@ created God the heaven
 - `verb(o1 o2 ...)`
 - `verb@sub(o1 o2 ...)`
 
-应用场景:  通用过程描述, 日常问题求解
-
-- 看起来像是`Lisp`的一个方言呢
-- 好吧, 根本就是一个`Lisp`方言
-- 我也全然不知道为什么会这样...
+应用场景: 通用过程描述, 日常问题求解
 
 ## 内置数据类型
-- 布尔型(bool, 8bit), 字符型(char, UTF8), 整型(int, 64bit), 实型(real, 64bit), 字符串(string), 句柄(handle)
+- 布尔型(bool, 8bit), 整型(int, 64bit), 实型(real, 64bit), 字符串(string), 句柄(handle)
 - 列表(list, 用`()`定义), 自定义数据类型
 
 ## 内置操作类型
@@ -93,8 +89,12 @@ mac(12.3 23 45.6)
 fn(2 3)
 ```
 
-## 库
+### 库
 ```
-import("matrix" "../plotlib")
-import( ("~/vs/lib/plotlib" plt) ) # import plotlib as plt; no sub lib
+package("main")
+
+import("linear" "../plotlib")
+import("ml/trees/rf")
+import( ("math/plotlib" plt) ) # import plotlib as plt; no sub lib
+=@x(linear.matrix.transpose( (1 3) (5 9) )) # is not this complex?
 ```
