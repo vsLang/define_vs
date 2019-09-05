@@ -27,21 +27,10 @@ val(bool)@(x y)(True False) # 预定义常量: True False
 case (
     (in(ch {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}) =@cl("Int"))
     (||(&&(>=(ch 'a') <=(ch 'z')) &&(>=(ch 'A') <=(ch 'Z')))   =@cl("ABC"))
-    (_ =@cl("Other Char"))
+    (True  =@cl("Other Char"))
 )
 #+end_src
 
 loop, break, continue
 
-#+begin_src vs
-wrap@(a b) ( # 匿名函数
-    # pla pla pla ...
-)
-
-=@f(wrap@x(...)) # 将匿名函数赋值给变量f
-f(3) # 执行函数
-#+end_src
-
-# 闭包
-
-# 错误处理??
+# 匿名函数, 闭包, 错误处理??
