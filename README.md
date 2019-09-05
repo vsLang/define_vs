@@ -13,7 +13,7 @@
 即, `vs`的合法语句只有如下三种句式:
 - `verb(o1 o2 ...)`
 - `verb@sub(o1 o2 ...)`
-- `verb(m1 m2 ...)@sub(o1 o2 ...)`
+- `verb!m1 m2 ...@sub(o1 o2 ...)`
 
 应用场景: 通用过程描述, 日常问题求解
 
@@ -22,16 +22,16 @@
 - 列表(list, 用`{}`定义), 自定义数据类型
 
 ## 内置操作类型
-- 内置数据类型相关操作(访问列表元素用: `[]`, `表示不求值)
+- 内置数据类型相关操作(访问列表元素用: `[]`, `\``表示不求值)
 - 函数(wrap), 函数列表
 
 ## 语法结构
 ### 顺序
 ```
-var(int)@x() # x是整型变量, 初始值为0
+var!int@x() # x是整型变量, 初始值为0
 var@x(15) # x是整型变量, 初始值为15
 var@x1({15 50}) # x1 is a list
-var@y(real(0)) # var(real)@y(0) 0.0 
+var@y(real(0)) # var!real@y(0) 0.0 
 var@z(`real(1 2 3)) # 将列表`real(1 2 3)`(类似于其他语言的`{{real} {1 2 3}}`列表)赋值给z, 在这里不会对表达式求值
 var@(a b c)(1 '3' 5.0)
 var@x(scan@con("Please input a number:"))
@@ -60,20 +60,20 @@ case(
 
 ### 循环
 ```
-loop(value index)@ListY(
+loop!value index@ListY(
     print@con(index value) # index is loop cursor index of the list, value is assigned the list items
     print@con("Hello, world!")
     )
 
 
-loop(value)@ListY(
+loop!value@ListY(
     print@con(value)
     )
 ```
 
 ### 函数
 ```
-wrap(p1 p2 p3)@(funZ ObjZ)( # ...
+wrap!p1 p2 p3@(funZ ObjZ)( # ...
      # fields in ObjZ can be accessed and updated by funZ
      # no side effect
      )
@@ -81,7 +81,7 @@ wrap(p1 p2 p3)@(funZ ObjZ)( # ...
 funZ@O1(1 2 3) # o1 can be updated
 
 
-wrap(q1 q2 q3)@(mac)(
+wrap!q1 q2 q3@(mac)(
      # can return something
      # no side effect
      )
