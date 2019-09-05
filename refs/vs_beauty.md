@@ -9,6 +9,7 @@ a
 - 清单 2. 延迟求值和引用
 ```
 `a
+`append@{tigers bears}(lions)
 ```
 
 - 清单 3. 键入一个简单列表
@@ -43,14 +44,14 @@ append@{lions}(tigers bears)
 
 - 清单 7. 构建第二个函数
 ```
-wrap~lst@(my_2nd)( lst[1] )
+wrap~lst@my_2nd( lst[1] )
 
 my_2nd( {1 2.0 "3" 4 5} )  # 2.0
 ```
 
 - 清单 8. 计算两个整数中的最大值
 ```
-wrap~x y@(my_max) (
+wrap~x y@my_max (
     case (
       (>(x y) x)
       (True   y) # all other cases
@@ -63,7 +64,7 @@ my_max(6 1) # 6
 
 - 清单 9. 使用递归计算列表的总和
 ```
-wrap~x@(total) (
+wrap~x@total (
     case(
       (is_null(x) 0)
       (Trud   +(x[0] total(x[1:])))

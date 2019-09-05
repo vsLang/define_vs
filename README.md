@@ -7,13 +7,13 @@
 每条语句, 
 - 必须有且只有一个`谓语`
 - 必须有若干个`宾语` (个数为0时, 需用`()`占位)
-- 可以有零到一个`主语`(个数为0时, 直接省略, 无需占位)
+- 可以有零到若干个`主语`(个数为0时, 直接省略, 无需占位)
 - 存在主语时可以加若干个`修饰词`(个数为0时, 直接省略, 无需占位)
 
 即, `vs`的合法语句只有如下三种句式:
 - `verb (o1 o2 ...)`
-- `verb @ sub (o1 o2 ...)`
-- `verb ~ m1 m2 ... @ sub (o1 o2 ...)`
+- `verb @ s1 s2 ... (o1 o2 ...)`
+- `verb ~ m1 m2 ... @ s1 s2 ... (o1 o2 ...)`
 
 应用场景: 通用过程描述, 日常问题求解
 
@@ -33,7 +33,7 @@ var@x(15) # x是整型变量, 初始值为15
 var@x1({15 50}) # x1 is a list
 var@y(real(0)) # var~real@y(0) 0.0 
 var@z(`real(1 2 3)) # 将列表`real(1 2 3)`(类似于其他语言的`{{real} {1 2 3}}`列表)赋值给z, 在这里不会对表达式求值
-var@(a b c)(1 '3' 5.0)
+var@a b c(1 '3' 5.0)
 var@x(scan@con("Please input a number:"))
 
 val@y(5) # x是整型常量, 初始值为5
@@ -73,7 +73,7 @@ loop~value@ListY(
 
 ### 函数
 ```
-wrap~p1 p2 p3@(funZ ObjZ)( # ...
+wrap~p1 p2 p3@funZ ObjZ( # ...
      # fields in ObjZ can be accessed and updated by funZ
      # no side effect
      )
@@ -81,7 +81,7 @@ wrap~p1 p2 p3@(funZ ObjZ)( # ...
 funZ@O1(1 2 3) # o1 can be updated
 
 
-wrap~q1 q2 q3@(mac)(
+wrap~q1 q2 q3@ mac (
      # can return something
      # no side effect
      )
