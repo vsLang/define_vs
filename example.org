@@ -1,5 +1,5 @@
 #+begin_src vs
-var(int)@v1 # 这是注释
+var(int)@v1() # 这是注释 默认初始化为0
 var(string)@v2("文本")
 var@v9(23) # 类型自动推断
 
