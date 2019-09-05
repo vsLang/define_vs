@@ -74,7 +74,7 @@ wrap~x@total (
 total({1 5 1}) # 7
 ```
 
-- 清单 10. Lambda 表达式
+- 清单 10. Lambda 表达式 // 匿名函数
 ```
-# maybe later
+wrap ~ p1 p2 @ _ (...)
 ```

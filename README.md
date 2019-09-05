@@ -86,7 +86,12 @@ wrap~q1 q2 q3@ mac (
      # no side effect
      )
 
-mac(12.3 23 45.6) # 暂不考虑匿名函数
+mac(12.3 23 45.6)
+
+var ~ int @ fn ( # 指定返回值类型
+    wrap ~ x y z @ _ ( # 匿名函数
+        # ------
+    ))
 ```
 
 ### 库

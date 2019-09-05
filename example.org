@@ -32,4 +32,9 @@ case (
 
 loop, break, continue
 
-# 匿名函数, 闭包, 错误处理??
+# 匿名函数
+var@fn (
+wrap ~ x @ _ ( ... )
+)
+
+# 闭包, 错误处理??
