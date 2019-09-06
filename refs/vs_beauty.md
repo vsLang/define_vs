@@ -8,8 +8,8 @@ a
 
 - 清单 2. 延迟求值和引用
 ```
-`a
-`append@{tigers bears}(lions)
+`a`
+`append@{tigers bears}(lions)`
 ```
 
 - 清单 3. 键入一个简单列表
