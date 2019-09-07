@@ -53,8 +53,8 @@ my_2nd( {1 2.0 "3" 4 5} )  # 2.0
 ```
 wrap~x y@my_max (
     case (
-      (>(x y) x)
-      (True   y) # all other cases
+      {>(x y) x}
+      {True   y} # all other cases
     )
 )
 
@@ -66,8 +66,8 @@ my_max(6 1) # 6
 ```
 wrap~x@total (
     case(
-      (is_null(x) 0)
-      (Trud   +(x[0] total(x[1:])))
+      {is_null(x) 0}
+      {True   +(x[0] total(x[1:]))}
     )
 )
  

@@ -24,9 +24,9 @@ val~bool@x y(True False) # 预定义常量: True False
 
 #+begin_src vs
 case (
-    (in(ch {'0' '1' '2' '3' '4' '5' '6' '7' '8' '9'}) =@cl("Int"))
-    (||(&&(>=(ch 'a') <=(ch 'z')) &&(>=(ch 'A') <=(ch 'Z')))   =@cl("ABC"))
-    (True  =@cl("Other Char"))
+    {in(ch {'0' '1' '2' '3' '4' '5' '6' '7' '8' '9'}) =@cl("Int")}
+    {||(&&(>=(ch 'a') <=(ch 'z')) &&(>=(ch 'A') <=(ch 'Z')))   =@cl("ABC")}
+    {True  =@cl("Other Char")}
 )
 #+end_src
 

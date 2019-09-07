@@ -52,9 +52,9 @@ exec( "..." ) # exec vs source codes in string
 ### 分支
 ```
 case(
-      (==(varX      "DNBE") print@con("Do NOT Be Evil!"))
-      (==(varX[-4:] "TING") print@con("That is not good!"))
-      (True                 print@con("Listen Well Google!")) # 所有其他情况
+      {==(varX      "DNBE") print@con("Do NOT Be Evil!")}
+      {==(varX[-4:] "TING") print@con("That is not good!")}
+      {True                 print@con("Listen Well Google!")} # 所有其他情况
       )
 ```
 
