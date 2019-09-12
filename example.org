@@ -1,18 +1,18 @@
 #+begin_src vs
-var~v1() # 这是注释 默认初始化为0
-var~string@v2("文本")
-var@v9(23) # 类型自动推断
+Var@v1() # 这是注释 默认初始化为0
+Var~String@v2("文本")
+Var@v9(23) # 类型自动推断
 
 =@x y(y x) # 交换x和y的值
 _ # 匿名变量
 #+end_src
 
 #+begin_src vs
-val~real@Pi(3.14159265) # 常量
-val@zero(0.0)
-val@size shape(32 5) # size=32, shape=5
-val~real@u v(0.5 3) # 不用real的话 v=3, 用了之后 v=3.0
-val~bool@x y(True False) # 预定义常量: True False
+Val~Real@Pi(3.14159265) # 常量
+Val@zero(0.0)
+Val@size shape(32 5) # size=32, shape=5
+Val~Real@u v(0.5 3) # 不用real的话 v=3, 用了之后 v=3.0
+Val~Bool@x y(True False) # 预定义常量: True False
 #+end_src
 
 #+begin_src vs
@@ -23,8 +23,8 @@ val~bool@x y(True False) # 预定义常量: True False
 #+end_src
 
 #+begin_src vs
-case (
-    {in(ch {'0' '1' '2' '3' '4' '5' '6' '7' '8' '9'}) =@cl("Int")}
+Case (
+    {In(ch {'0' '1' '2' '3' '4' '5' '6' '7' '8' '9'}) =@cl("Int")}
     {||(&&(>=(ch 'a') <=(ch 'z')) &&(>=(ch 'A') <=(ch 'Z')))   =@cl("ABC")}
     {True  =@cl("Other Char")}
 )
@@ -33,8 +33,8 @@ case (
 loop, break, continue
 
 # 匿名函数
-var@fn (
-wrap ~ x @ _ ( ... )
+Var@fn (
+Wrap ~ x @ _ ( ... )
 )
 
 # 闭包, 错误处理, 并行等其他高级特性? 第1版中不考虑.

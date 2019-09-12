@@ -9,7 +9,7 @@ a
 - 清单 2. 延迟求值和引用
 ```
 `a`
-`append@{tigers bears}(lions)`
+`Append@{tigers bears}(lions)`
 ```
 
 - 清单 3. 键入一个简单列表
@@ -28,10 +28,10 @@ lions
 
 - 清单 5. 使用构造函数
 ```
-append@{tigers bears}(lions)
+Append@{tigers bears}(lions)
 {tigers bears lions}
  
-append@{lions}(tigers bears)
+Append@{lions}(tigers bears)
 {lions tigers bears}
 ```
 
@@ -44,15 +44,15 @@ append@{lions}(tigers bears)
 
 - 清单 7. 构建第二个函数
 ```
-wrap~lst@my_2nd( lst[1] )
+Wrap~lst@my_2nd( lst[1] )
 
 my_2nd( {1 2.0 "3" 4 5} )  # 2.0
 ```
 
 - 清单 8. 计算两个整数中的最大值
 ```
-wrap~x y@my_max (
-    case (
+Wrap~x y@my_max (
+    Case (
       {>(x y) x}
       {True   y} # all other cases
     )
@@ -64,10 +64,10 @@ my_max(6 1) # 6
 
 - 清单 9. 使用递归计算列表的总和
 ```
-wrap~x@total (
-    case(
-      {is_null(x) 0}
-      {True   +(x[0] total(x[1:]))}
+Wrap~x@total (
+    Case(
+      {IsNull(x) 0}
+      {True  +(x[0] total(x[1:]))}
     )
 )
  
@@ -76,5 +76,5 @@ total({1 5 1}) # 7
 
 - 清单 10. Lambda 表达式 // 匿名函数
 ```
-wrap ~ p1 p2 @ _ (...)
+Wrap ~ p1 p2 @ _ (...)
 ```
