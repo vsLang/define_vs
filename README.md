@@ -22,7 +22,7 @@
 - 列表(List, 用`{}`定义), 自定义数据类型
 
 ## 内置操作类型
-- 内置数据类型相关操作(访问列表元素用: `[]`, `...`表示不求值)
+- 内置数据类型相关操作(访问列表元素用: `[]`, 撇号可括起表达式而不求值)
 - 函数(Wrap), 函数列表
 
 ## 语法结构
@@ -30,10 +30,10 @@
 ```
 Var~Int@x() # x是整型变量, 初始值为0
 Var@x(15) # x是整型变量, 初始值为15
-Var@x1({15 50}) # x1 is a List
+Var@x1({15, 50}) # x1 is a List # 逗号可以省略
 Var@y(real(0)) # Var~Real@y(0) 0.0 
 Var@z(`Real(1 2 3)`) # 将列表`{{Real} {} {} {1 2 3}}`赋值给z, 在这里不会对表达式求值
-Var@a b c(1 '3' 5.0)
+Var@a, b, c(1 '3' 5.0) # 逗号可以省略
 Var@x(Scan@Con("Please input a number:"))
 
 Val@y(5) # x是整型常量, 初始值为5
@@ -43,8 +43,11 @@ Print@Con(z[-1] z[0]) # {1 2 3} {real}
 Print@File1("Hello, world!")
 =@x(9) # assign Value 9 to x
 
-Math("3 + $a * (5 - $c)") # a c are Vars
-Print@Con(Math(" $a && (5 > $b + $c) ")) # easy reading eqs.
+DoSthA ~ :< @ xxx ({a b c e d f g h i j k l}) # map
+DoSthB ~ :> @ zzz ({a b c e d f g h i j k l}) # reduce
+
+Math('3 + $a$ * (5 - $c$)') # easy reading eqs. # a c are Vars
+Print@Con(' $06I:a$ $\t$ && $\t$ (5 > $b$ + $6.3R:c$) $\n$$$') # 字符串转义与打印
 Eval( `...` ) # Eval `vs` expr (yet another list)
 Exec( "..." ) # Exec `vs` source codes in string
 ```
@@ -52,7 +55,7 @@ Exec( "..." ) # Exec `vs` source codes in string
 ### 分支
 ```
 Case(
-      {==(varX      "DNBE") Print@Con("Do NOT Be Evil!")}
+      {==(varX      "DNBE") Print@Con("Do NOT Be Evil!\n")} # 双引号串不转义
       {==(varX[-4:] "TING") Print@Con("That is not good!")}
       {True                 Print@Con("Listen Well Google!")} # 所有其他情况
       )
