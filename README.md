@@ -43,8 +43,10 @@ Print@Con(z[-1] z[0]) # {1 2 3} {real}
 Print@File1("Hello, world!")
 =@x(9) # assign Value 9 to x
 
-DoSthA ~ :< @ xxx ({a b c e d f g h i j k l}) # map
-DoSthB ~ :> @ zzz ({a b c e d f g h i j k l}) # reduce
+Map @ FunctionA ({a b c e d f g h i j k l}) # map
+Reduce @ FunctionB ({a b c e d f g h i j k l}) # reduce
+Pipeline @ {FuncA FuncB FuncC FuncD}(xxx) # FuncD(FuncC(FuncB(FuncA(xxx))))
+Times 3 @ Func(xxx) # Func(Func(Func(xxx)))
 
 Math('3 + $a$ * (5 - $c$)') # easy reading eqs. # a c are Vars
 Print@Con(' $06I:a$ $\t$ && $\t$ (5 > $b$ + $6.3R:c$) $\n$$$') # 字符串转义与打印
